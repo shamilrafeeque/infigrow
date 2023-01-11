@@ -1,0 +1,79 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Our Company</title>
+</head>
+
+<body>
+
+  <h1></h1>
+  <h2></h2>
+  
+  <head>
+   
+      <style>
+      .main {
+          font-size: 36px;
+          font-weight: bold;
+          Text-align: center;
+      }
+      
+  
+      .gfg {
+        margin-left: 550px;
+        border: 50px solid #0a2d0a;
+        width: 329px;
+        height: 67px;
+        text-align: center;
+        padding: 36px;
+      }
+      .gfg1 {
+          font-size: 42px;
+          font-weight: bold;
+          color: #009900;
+          margin-top: 60px;
+          background-color: #c5c5db;
+      }
+      
+      .gfg2 {
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #c5c5db;
+      }
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+      </style>
+
+  </head>
+  
+  <body>
+      <div class="main">Welcome to Our Company</div>
+      <div class="gfg">
+        <div class="widget-header mt-3 pl-5">
+            <small class="title text-muted">Welcome guest!</small><br>
+            <button class="button" 
+                onclick="window.location.href = '{% url 'register' %}';">
+                Signup
+            </button>
+            <button class="button" 
+                onclick="window.location.href = '{% url 'login' %}';">
+                login
+            </button>
+        <div>
+    </div>
+</div>
+</body>
+</html>
+

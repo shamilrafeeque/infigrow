@@ -1,0 +1,137 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Our Company</title>
+  <script type = "text/javascript" >  
+    function preventBack() { window.history.forward(); }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () { null };  
+</script> 
+</head>
+
+<body>
+    <style>
+        
+        .center {
+            display: table;
+            margin: auto;
+          }
+        h1 {text-align: center;}
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+          }
+          <title>CSS Box Model</title>
+      <style>
+      .main {
+          font-size: 36px;
+          font-weight: bold;
+          Text-align: center;
+      }
+      
+  
+      .gfg {
+        margin-left: 550px;
+        border: 50px solid #0a2d0a;
+        width: 329px;
+        height: 67px;
+        text-align: center;
+        padding: 36px;
+      }
+      .gfg1 {
+          font-size: 42px;
+          font-weight: bold;
+          color: #009900;
+          margin-top: 60px;
+          background-color: #c5c5db;
+      }
+      
+      .gfg2 {
+          font-size: 18px;
+          font-weight: bold;
+          background-color: #c5c5db;
+      }
+      .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+
+
+  <script src="{% static 'task/static/scripts.js' %}"></script>
+            {% if user.id is None%}
+				<div class="intro">
+                   
+      <div class="gfg">
+        <div class="widget-header mt-3 pl-5">
+     
+					<small class="title text-muted">Welcome guest!</small><br>
+					<button class="button" 
+                         onclick="window.location.href = '{% url 'register' %}';">
+                         Signup
+                    </button>
+                    <button class="button" 
+                         onclick="window.location.href = '{% url 'login' %}';">
+                             login
+                    </button>
+                   
+
+                   
+				<div>
+				</li>
+				{% else %}
+				
+				<div class="center" >
+                    <div class="hello">
+                    <h1 >Welcome To {{user.username}}</h1>
+					<h2>username:  {{user.username}}<br></h2>
+                    <h2>mobile number:  {{user.mobile}}<br></h2>
+                    <h2>email:   {{user.email}}<br></h2>
+                    </style>
+                    </div>
+                    
+                            <button class="button" 
+                                onclick="window.location.href = '{% url 'update_profile' user.id %}';">
+                                Update Profile
+                            </button>&nbsp;
+                            <button class="button" 
+                                onclick="window.location.href = '{% url 'delete_account' %}';">
+                                    Delete Account
+                            </button>&nbsp;
+                            <button class="button" 
+                                onclick="window.location.href = '{% url 'logout' %}';">
+                                Logout
+                            </button>
+                            
+                        </div>
+                    
+				{% endif %}
+				
+            </body>
+            </html>
+            <script>
+                history.pushState(null, null, location.href);
+                window.onpopstate = function () {
+                    history.go(1);
+                };
+            </script>
+                
+
+
+    <!-- END nav -->

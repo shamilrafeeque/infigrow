@@ -1,0 +1,91 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+  </head>
+  <body>
+    <div class="registration-container">
+  
+        <h1>Registration</h1>
+        <form action="{% url 'register' %}" method='POST'>
+          {% csrf_token %}
+          
+            
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <div class="form-outline">
+              
+              <label class="form-label" for="form3Example1m">User name</label>
+              {{form.username}}
+            </div>
+          </div>
+    
+
+        
+
+        <div class="form-outline mb-4">
+          
+          <label class="form-label" for="form3Example8">Email</label><br>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+       
+
+      
+
+        
+
+        <div class="form-outline mb-4">
+         
+          <label class="form-label" for="form3Example90">Phone number</label><br>
+          {{form.mobile}}
+        </div>
+
+        <div class="form-outline mb-4">
+         
+          <label class="form-label" for="form3Example99">password</label><br>
+          {{form.password}}
+        </div>
+        <div class="form-outline mb-4">
+         
+          <label class="form-label" for="form3Example99">password</label><br>
+          {{form.confirm_password}}
+        </div>
+        
+
+        <div class="d-flex justify-content-end pt-3">
+          {% comment %} <button type="button" class="btn btn-light btn-lg">Reset all</button> {% endcomment %}
+          <input type="Submit" class="btn btn-warning btn-lg ms-2" ></button>
+        </form>
+
+
+
+
+
+
+   
+    </div>
+  </body>
+</html>
+
+
+<script>
+  var emailInput = document.getElementById("email");
+  emailInput.addEventListener("blur", function() {
+      var email = emailInput.value;
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "{% url 'check_email' %}?email=" + email);
+      xhr.onload = function() {
+          if (xhr.status === 200) {
+              var data = JSON.parse(xhr.responseText);
+              if (data.is_taken) {
+                  alert("Mail id is already exists ");
+              }
+          }
+      };
+      xhr.send();
+  });
+</script>
+
