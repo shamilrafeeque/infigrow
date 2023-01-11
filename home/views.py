@@ -60,8 +60,6 @@ def home(request):
 def index(request):
     return render(request, 'index.html')
 
-# def userprofile(request):
-#     return render(request,'userprofile.html')
 
 
 
@@ -87,18 +85,12 @@ def delete_account(request):
     else:
         return render(request, 'delete_account.html')
     
-    
-    
-     
+
+  
 def user_logout(request):
     logout(request)
-    print("***************")
     messages.success(request, 'you are logged out.')
     return redirect("home")
-
-
-
-
 
 
 def check_email(request):
